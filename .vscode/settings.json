@@ -1,0 +1,25 @@
+{
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Night Owl",
+  "editor.formatOnPaste": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingComments": "always",
+  "editor.autoClosingDelete": "always",
+  "editor.autoClosingOvertype": "auto",
+  "editor.autoClosingQuotes": "always",
+  "editor.autoIndentOnPaste": true,
+  "editor.autoSurround": "brackets",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.codeActions.triggerOnFocusChange": true,
+  "editor.defaultColorDecorators": "always",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "path-intellisense.absolutePathToWorkspace": true,
+  "path-intellisense.showHiddenFiles": true
+}

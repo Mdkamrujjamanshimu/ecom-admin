@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.dark ::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+.dark::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #212121;
+}
+
+/* :root {
+  --background: #eff5f4;
+  --foreground: #000000;
+} */
+
+.dark {
+  --background: #171717;
+  --foreground: #c8c8c8;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.ReactCollapse--collapse {
+  transition: height 300ms;
+}
+
+/* 
+medium color = #111113 
+themeDark = #151515
+*/
