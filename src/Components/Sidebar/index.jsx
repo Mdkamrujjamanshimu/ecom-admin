@@ -35,7 +35,7 @@ const Sidebar = () => {
           : "w-0"
       }`}
     >
-      <div className="p-3 max-[341px]:p-1">
+      <div className="p-3">
         <Link href="/">
           {state.darkMode ? (
             <Image src="/logo-white.webp" width={130} height={43} alt="Logo" />
