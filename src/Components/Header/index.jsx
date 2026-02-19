@@ -69,14 +69,14 @@ const Header = () => {
             className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900! max-[331px]:m-0! max-[331px]:p-0!"
           >
             {state.darkMode ? (
-              <MdLightMode size={25} />
+              <MdLightMode size={20} />
             ) : (
-              <MdDarkMode size={25} />
+              <MdDarkMode size={20} />
             )}
           </Button>
 
           <Button className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900! max-[331px]:m-0! max-[331px]:p-0!">
-            <FaRegBell size={22} />
+            <FaRegBell size={20} />
           </Button>
 
           <div className="flex items-center">
