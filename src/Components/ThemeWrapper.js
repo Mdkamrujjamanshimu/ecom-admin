@@ -23,7 +23,7 @@ const ThemeWrapper = ({ children }) => {
             layoutState.sidebarOpen
               ? layoutState.isDesktop
                 ? "w-[18%]" // Desktop: % width
-                : "w-[180px]" // Mobile: fixed px width
+                : "w-[170px]" // Mobile: fixed px width
               : "w-0"
           }`}
         >

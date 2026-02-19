@@ -41,15 +41,15 @@ const Header = () => {
     <>
       <header
         ref={headerRef}
-        className={`flex fixed top-0 z-[1000] px-4 py-3 justify-between shadow-md bg-[#ffffff] dark:bg-[#111113] transition-all duration-300 ${
+        className={`flex fixed top-0 z-[1000] px-2 py-3 justify-between shadow-md bg-[#ffffff] dark:bg-[#111113] transition-all duration-300 ${
           layoutState.sidebarOpen
             ? layoutState.isDesktop
               ? "left-[18%] w-[82%]"
-              : "left-[180px] w-[calc(100%-180px)]"
+              : "left-[170px] w-[calc(100%-170px)]"
             : "left-0 w-full"
         }`}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           {/* toggle icon */}
           <Button
             className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900!"
@@ -79,7 +79,7 @@ const Header = () => {
             <FaRegBell size={22} />
           </Button>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             <Button className="min-w-10! w-10! h-10! rounded-full! flex! items-center! justify-center! bg-gray-800! dark:bg-blue-600! text-white!">
               K
             </Button>

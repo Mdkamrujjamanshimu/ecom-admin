@@ -31,7 +31,7 @@ const Sidebar = () => {
         layoutState.sidebarOpen
           ? layoutState.isDesktop
             ? "w-[18%]"
-            : "w-[180px]" // fixed width mobile
+            : "w-[170px]" // fixed width mobile
           : "w-0"
       }`}
     >
