@@ -66,7 +66,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Button
             onClick={toggleTheme}
-            className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900! max-[331px]:m-0! max-[331px]:p-0!"
+            className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900!"
           >
             {state.darkMode ? (
               <MdLightMode size={20} />
@@ -75,12 +75,12 @@ const Header = () => {
             )}
           </Button>
 
-          <Button className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900! max-[331px]:m-0! max-[331px]:p-0!">
+          <Button className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900! max-[550px]:hidden!">
             <FaRegBell size={20} />
           </Button>
 
           <div className="flex items-center">
-            <Button className="min-w-8! w-8! h-8! rounded-full! flex! items-center! justify-center! bg-gray-800! dark:bg-blue-600! text-white! max-[331px]:m-0! max-[331px]:p-0!">
+            <Button className="min-w-8! w-8! h-8! rounded-full! flex! items-center! justify-center! bg-gray-800! dark:bg-blue-600! text-white!">
               K
             </Button>
           </div>
