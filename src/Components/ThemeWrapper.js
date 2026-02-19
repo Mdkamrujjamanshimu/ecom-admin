@@ -22,7 +22,7 @@ const ThemeWrapper = ({ children }) => {
           className={`sidebarWrapper fixed top-0 left-0 h-screen z-1000 transition-all duration-300 ${
             layoutState.sidebarOpen
               ? layoutState.isDesktop
-                ? "w-[18%]" // Desktop: % width
+                ? "w-[20%]" // Desktop: % width
                 : "w-[170px]" // Mobile: fixed px width
               : "w-0"
           }`}
@@ -36,7 +36,7 @@ const ThemeWrapper = ({ children }) => {
           className={`rightContent transition-all duration-300 dark:bg-[#111111] ${
             layoutState.isDesktop
               ? layoutState.sidebarOpen
-                ? "w-[82%] ml-[18%]" // Desktop open
+                ? "w-[80%] ml-[20%]" // Desktop open
                 : "w-full ml-0" // Desktop closed
               : "w-full ml-0" // Mobile সব সময় full width
           }`}

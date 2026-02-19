@@ -30,7 +30,7 @@ const Sidebar = () => {
       className={`h-screen max-h-screen overflow-y-scroll overflow-x-hidden border-r border-[rgba(0,0,0,0.1)] fixed top-0 left-0 bg-[#ffffff] dark:bg-[#111113] transition-all duration-300 ${
         layoutState.sidebarOpen
           ? layoutState.isDesktop
-            ? "w-[18%]"
+            ? "w-[20%]"
             : "w-[170px]" // fixed width mobile
           : "w-0"
       }`}
