@@ -13,11 +13,11 @@ import { LuUsers } from "react-icons/lu";
 const DashboardBoxes = () => {
   return (
     <div className="dashboardBoxes">
-      <Swiper
-        slidesPerView={4}
+      {/* <Swiper
+        slidesPerView={3}
         spaceBetween={10}
         modules={[Navigation]}
-        className="mySwiper"
+        className="mySwiper grid! grid-cols-2!"
       >
         <SwiperSlide>
           <Box
@@ -57,7 +57,7 @@ const DashboardBoxes = () => {
             progress={true}
           />
         </SwiperSlide>
-      </Swiper>
+      </Swiper> */}
     </div>
   );
 };

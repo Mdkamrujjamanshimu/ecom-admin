@@ -1,5 +1,6 @@
 // @ts-nocheck
 "use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,9 +27,13 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`${
-        layoutState.sidebarOpen ? "w-[18%]" : "w-0"
-      } h-screen max-h-screen overflow-y-scroll overflow-x-hidden border-r border-[rgba(0,0,0,0.1)] fixed top-0 left-0 bg-[#ffffff] dark:bg-[#111113] transition-all duration-300`}
+      className={`h-screen max-h-screen overflow-y-scroll overflow-x-hidden border-r border-[rgba(0,0,0,0.1)] fixed top-0 left-0 bg-[#ffffff] dark:bg-[#111113] transition-all duration-300 ${
+        layoutState.sidebarOpen
+          ? layoutState.isDesktop
+            ? "w-[18%]"
+            : "w-[180px]" // fixed width mobile
+          : "w-0"
+      }`}
     >
       <div className="p-3">
         <Link href="/">
@@ -49,7 +54,11 @@ const Sidebar = () => {
                       {menu.items?.length > 0 ? (
                         <Button
                           variant="text"
-                          className={`w-full capitalize! text-left justify-start! group-hover:bg-gray-200! dark:group-hover:bg-gray-900! text-gray-700! gap-2 font-semibold! text-[13px]! py-2! dark:text-gray-200! ${toggleIndex === index && isToggleSubMenu === true ? "bg-gray-200! dark:bg-gray-900!" : ""}`}
+                          className={`w-full capitalize! text-left justify-start! group-hover:bg-gray-200! dark:group-hover:bg-gray-900! text-gray-700! gap-2 font-semibold! text-[13px]! py-2! dark:text-gray-200! ${
+                            toggleIndex === index && isToggleSubMenu
+                              ? "bg-gray-200! dark:bg-gray-900!"
+                              : ""
+                          }`}
                         >
                           {menu?.icon} {menu?.title}
                         </Button>
@@ -72,7 +81,11 @@ const Sidebar = () => {
                         >
                           <FaAngleDown
                             size={15}
-                            className={`${toggleIndex === index && isToggleSubMenu === true ? "rotate-180" : ""}`}
+                            className={`${
+                              toggleIndex === index && isToggleSubMenu
+                                ? "rotate-180"
+                                : ""
+                            }`}
                           />
                         </Button>
                       )}

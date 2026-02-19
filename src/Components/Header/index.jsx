@@ -2,8 +2,7 @@ import { Button } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { BiMenuAltLeft } from "react-icons/bi";
 import SearchBox from "../SearchBox";
-import { MdLightMode } from "react-icons/md";
-import { MdDarkMode } from "react-icons/md";
+import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { FaRegBell } from "react-icons/fa";
 import { useTheme } from "@/app/context/ThemeContext";
 import { useLayout } from "@/app/context/LayoutContext";
@@ -12,6 +11,7 @@ const Header = () => {
   const { state, dispatch } = useTheme();
   const { dispatch: layoutDispatch } = useLayout();
   const { state: layoutState } = useLayout();
+
   const toggleTheme = () => dispatch({ type: "TOGGLE_THEME" });
 
   // ! STATE TO STORE HEADER HEIGHT
@@ -27,20 +27,27 @@ const Header = () => {
         setHeaderHeight(headerRef.current.offsetHeight);
       }
     };
-
     handleResize();
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  //   <header
+  //   ref={headerRef}
+  //   className={`flex fixed top-0 right-0 z-1000 px-4 py-3 justify-between shadow-md bg-[#ffffff] dark:bg-[#111113] ${layoutState.sidebarOpen ? "w-[82%]" : "w-full"} transition-all duration-300`}
+  // >
 
   return (
     <>
       <header
         ref={headerRef}
-        className={`flex fixed top-0 right-0 z-1000 px-4 py-3 justify-between shadow-md bg-[#ffffff] dark:bg-[#111113] ${
-          layoutState.sidebarOpen ? "w-[82%]" : "w-full"
-        } transition-all duration-300`}
+        className={`flex fixed top-0 z-[1000] px-4 py-3 justify-between shadow-md bg-[#ffffff] dark:bg-[#111113] transition-all duration-300 ${
+          layoutState.sidebarOpen
+            ? layoutState.isDesktop
+              ? "left-[18%] w-[82%]"
+              : "left-[180px] w-[calc(100%-180px)]"
+            : "left-0 w-full"
+        }`}
       >
         <div className="flex items-center gap-3">
           {/* toggle icon */}
@@ -50,12 +57,16 @@ const Header = () => {
           >
             <BiMenuAltLeft size={25} />
           </Button>
-          <SearchBox placeholder="Search here..." width="300px" />
+
+          <div className="max-[550px]:hidden">
+            <SearchBox placeholder="Search here..." width="300px" />
+          </div>
         </div>
-        <div className="flex items-center gap-3">
+
+        <div className="flex items-center justify-between">
           <Button
             onClick={toggleTheme}
-            className="min-w-10! w-10! h-10! rounded-full! text-gray-800!  dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900!"
+            className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900!"
           >
             {state.darkMode ? (
               <MdLightMode size={25} />
@@ -75,6 +86,7 @@ const Header = () => {
           </div>
         </div>
       </header>
+
       {/* TO HANDLE HEADER HEIGHT */}
       <div style={{ height: headerHeight }}></div>
     </>

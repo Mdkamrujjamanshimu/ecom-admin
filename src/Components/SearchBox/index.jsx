@@ -1,9 +1,10 @@
 import React from "react";
 import { IoSearch } from "react-icons/io5";
+// style={{ width: props.width }}
 
 const SearchBox = (props) => {
   return (
-    <div className={`searchBox relative`} style={{ width: props.width }}>
+    <div className={`searchBox relative`} >
       <IoSearch size={18} className="absolute top-3 left-2.5 text-gray-500" />
       <input
         type="text"
