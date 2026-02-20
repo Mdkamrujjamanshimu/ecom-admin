@@ -13,9 +13,9 @@ const page = () => {
       {/* ADD CATEGORY */}
 
       <div
-        className={`flex justify-between items-center bg-white dark:bg-[#181818] p-3 my-4 rounded-md`}
+        className={`flex max-[425px]:flex-col justify-between items-center max-[425px]:items-start gap-2 bg-white dark:bg-[#181818] p-3 my-4 rounded-md`}
       >
-        <div className="">
+        <div className="max-[425px]:w-full">
           <SearchBox placeholder="New Category..." width="300px" />
         </div>
         <div className="">
@@ -29,9 +29,10 @@ const page = () => {
       </div>
 
       {/* CATEGORY LIST TABLE */}
+      <h2 className="text-2xl font-bold py-2">Category List</h2>
 
-      <div className="">
-        <table className="min-w-full border border-gray-200 rounded-xl overflow-hidden">
+      <div className="w-full overflow-x-auto rounded-md border border-gray-200 dark:border-[#282828]">
+        <table className="min-w-[700px] w-full">
           <thead className="bg-gray-100 dark:bg-[#131313]">
             <tr className="text-gray-700 dark:text-gray-300">
               <th className="px-4 py-3 text-left text-sm font-semibold">Sl</th>

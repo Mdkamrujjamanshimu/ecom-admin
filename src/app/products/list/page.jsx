@@ -75,8 +75,8 @@ const page = () => {
 
       {/* PRODUCT LIST TABLE */}
 
-      <div className="">
-        <table className="min-w-full border border-gray-200 rounded-xl overflow-hidden">
+      <div className="w-full overflow-x-auto rounded-md border border-gray-200 dark:border-[#282828]">
+        <table className="min-w-[700px] w-full">
           <thead className="bg-gray-100 dark:bg-[#131313]">
             <tr className="text-gray-700 dark:text-gray-300">
               <th className="px-4 py-3 text-left text-sm font-semibold">Sl</th>

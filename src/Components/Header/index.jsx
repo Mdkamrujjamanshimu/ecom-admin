@@ -32,10 +32,6 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  //   <header
-  //   ref={headerRef}
-  //   className={`flex fixed top-0 right-0 z-1000 px-4 py-3 justify-between shadow-md bg-[#ffffff] dark:bg-[#111113] ${layoutState.sidebarOpen ? "w-[82%]" : "w-full"} transition-all duration-300`}
-  // >
 
   return (
     <>

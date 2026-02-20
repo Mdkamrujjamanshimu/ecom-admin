@@ -13,7 +13,7 @@ const page = () => {
           action=""
           className="bg-white dark:bg-[#181818] p-5 m-4 rounded-md dark:text-gray-200 text-gray-800"
         >
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 max-[650px]:grid-cols-1 gap-4">
             <div className="flex flex-col gap-1">
               <label htmlFor="product-id" className="text-[18px] font-medium">
                 Product ID
@@ -156,14 +156,8 @@ const page = () => {
           </div>
           <div className="">
             <FormGroup className="flex! flex-row! gap-2!">
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Best Category"
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="New Product"
-              />
+              <FormControlLabel control={<Checkbox />} label="Best Category" />
+              <FormControlLabel control={<Checkbox />} label="New Product" />
             </FormGroup>
           </div>
           <Button className="bg-gray-800! hover:bg-gray-900! text-white! w-full! py-2! mt-4!">
