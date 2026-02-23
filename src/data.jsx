@@ -7,6 +7,7 @@ import MarkEmailUnreadTwoToneIcon from "@mui/icons-material/MarkEmailUnreadTwoTo
 import MarkChatUnreadTwoToneIcon from "@mui/icons-material/MarkChatUnreadTwoTone";
 import PeopleAltTwoToneIcon from "@mui/icons-material/PeopleAltTwoTone";
 import LogoutTwoToneIcon from "@mui/icons-material/LogoutTwoTone";
+import { title } from "node:process";
 
 export const sidebarMenu = [
   {
@@ -18,6 +19,20 @@ export const sidebarMenu = [
     title: "Category",
     href: "/category",
     icon: <CategoryTwoToneIcon size={16} />,
+    items: [
+      {
+        title: "Category List",
+        href: "/category/list",
+      },
+      {
+        title: "Add Category",
+        href: "/category/add",
+      },
+      {
+        title: "Edit Category",
+        href: "/category/edit",
+      },
+    ]
   },
   {
     title: "Products",

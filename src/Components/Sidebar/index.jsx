@@ -1,7 +1,7 @@
 // @ts-nocheck
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { sidebarMenu } from "@/data";
@@ -13,9 +13,9 @@ import { useLayout } from "@/app/context/LayoutContext";
 
 const Sidebar = () => {
   const { state } = useTheme();
-  const { state: layoutState } = useLayout();
+  const { state: layoutState, dispatch } = useLayout();
 
-  //! SUBMENU TOGGLE STATE & FUNCTION START
+  //! SUBMENU TOGGLE STATE
   const [isToggleSubMenu, setisToggleSubMenu] = useState(false);
   const [toggleIndex, settoggleIndex] = useState(null);
 
@@ -23,15 +23,42 @@ const Sidebar = () => {
     settoggleIndex(index);
     setisToggleSubMenu(!isToggleSubMenu);
   };
-  //! SUBMENU TOGGLE STATE & FUNCTION END
+
+  //! Sidebar ref for outside click
+  const sidebarRef = useRef(null);
+
+  //! Outside click → close sidebar (mobile only)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target) &&
+        !layoutState.isDesktop &&
+        layoutState.sidebarOpen
+      ) {
+        dispatch({ type: "TOGGLE_SIDEBAR" });
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [layoutState, dispatch]);
+
+  //! Close sidebar after clicking menu (mobile only)
+  const handleMobileClose = () => {
+    if (!layoutState.isDesktop) {
+      dispatch({ type: "TOGGLE_SIDEBAR" });
+    }
+  };
 
   return (
     <aside
+      ref={sidebarRef}
       className={`h-screen max-h-screen overflow-y-scroll overflow-x-hidden border-r border-[rgba(0,0,0,0.1)] fixed top-0 left-0 bg-[#ffffff] dark:bg-[#111113] transition-all duration-300 ${
         layoutState.sidebarOpen
           ? layoutState.isDesktop
             ? "w-[20%]"
-            : "w-[170px]" // fixed width mobile
+            : "w-[170px]"
           : "w-0"
       }`}
     >
@@ -63,7 +90,7 @@ const Sidebar = () => {
                           {menu?.icon} {menu?.title}
                         </Button>
                       ) : (
-                        <Link href={menu.href}>
+                        <Link href={menu.href} onClick={handleMobileClose}>
                           <Button
                             variant="text"
                             className="w-full capitalize! text-left justify-start! group-hover:bg-gray-200! dark:group-hover:bg-gray-900! text-gray-700! gap-2 font-semibold! text-[13px]! py-2! dark:text-gray-200!"
@@ -73,12 +100,9 @@ const Sidebar = () => {
                         </Link>
                       )}
 
-                      {/* Submenu Toggle Button */}
+                      {/* Toggle icon */}
                       {menu?.items?.length > 0 && (
-                        <Button
-                          className="absolute! min-w-7.5! rounded-full! w-7.5! h-7.5! z-50 top-1.25! right-2.5! flex! items-center! justify-center! cursor-pointer text-gray-700! dark:text-gray-200!"
-                          // onClick={() => toggleTab(index)}
-                        >
+                        <Button className="absolute! min-w-7.5! rounded-full! w-7.5! h-7.5! z-50 top-1.25! right-2.5! flex! items-center! justify-center! cursor-pointer text-gray-700! dark:text-gray-200!">
                           <FaAngleDown
                             size={15}
                             className={`${
@@ -105,6 +129,7 @@ const Sidebar = () => {
                                 className="block w-full"
                                 key={index_}
                                 href={item.href}
+                                onClick={handleMobileClose}
                               >
                                 <Button className="w-full text-left! justify-start! capitalize! text-[13px]! hover:bg-gray-200! text-gray-700! dark:text-gray-200! dark:hover:bg-gray-900! py-2!">
                                   {item.title}
