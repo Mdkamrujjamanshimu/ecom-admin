@@ -32,7 +32,7 @@ export const sidebarMenu = [
         title: "Edit Category",
         href: "/category/edit",
       },
-    ]
+    ],
   },
   {
     title: "Products",
@@ -54,28 +54,8 @@ export const sidebarMenu = [
     ],
   },
   {
-    title: "Customers",
-    href: "/customers/list",
-    icon: <PeopleAltTwoToneIcon size={16} />,
-  },
-  {
     title: "Orders",
-    href: "/orders/list",
+    href: "/orders",
     icon: <ShoppingCartTwoToneIcon size={16} />,
-  },
-  {
-    title: "Mail",
-    href: "/mail/list",
-    icon: <MarkEmailUnreadTwoToneIcon size={16} />,
-  },
-  {
-    title: "Chat",
-    href: "/chat/list",
-    icon: <MarkChatUnreadTwoToneIcon size={16} />,
-  },
-  {
-    title: "logout",
-    href: "/login",
-    icon: <LogoutTwoToneIcon size={16} />,
   },
 ];
