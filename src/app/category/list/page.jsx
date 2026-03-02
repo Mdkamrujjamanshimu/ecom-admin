@@ -52,7 +52,6 @@ const page = () => {
               <option value="">ID</option>
               <option value="">Name</option>
               <option value="">Price</option>
-              <option value="">Payment</option>
             </select>
           </div>
           <div className="w-full">

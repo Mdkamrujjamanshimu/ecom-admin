@@ -7,7 +7,7 @@ const page = () => {
     <div>
       <h2 className="text-2xl font-bold py-2 mt-3 mb-5">Order #ORD-001</h2>
       <div className="w-full">
-        <div className="bg-gray-100 dark:bg-[#181818] p-4 rounded-md mb-4">
+        <div className="bg-white dark:bg-[#181818] p-4 rounded-md mb-4">
           <h3 className="text-lg font-semibold mb-2">Order Details</h3>
           <div className="grid grid-cols-2 gap-4 max-[401px]:gap-2">
             <div>
@@ -68,7 +68,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="bg-gray-100 dark:bg-[#181818] p-4 rounded-md">
+        <div className="bg-white dark:bg-[#181818] p-4 rounded-md">
           <h3 className="text-lg font-semibold mb-2">Product List</h3>
           <div className="w-full overflow-x-auto">
             <table className="min-w-[500px] w-full">

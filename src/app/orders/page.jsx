@@ -7,7 +7,6 @@ import SearchBox from "@/Components/SearchBox";
 import Link from "next/link";
 import { MdAddCircle } from "react-icons/md";
 
-
 const page = () => {
   return (
     <div>
@@ -17,21 +16,10 @@ const page = () => {
 
       <div className="rounded-md border border-gray-200 dark:border-[#282828]">
         <div
-          className={`grid grid-cols-5 max-[1030px]:grid-cols-4 max-[989px]:grid-cols-5 max-[815px]:grid-cols-4 max-[660px]:grid-cols-3 max-[510px]:grid-cols-2 max-[425px]:grid-cols-1 gap-2 p-3 my-4 rounded-md`}
+          className={`grid grid-cols-3 max-[510px]:grid-cols-2 max-[425px]:grid-cols-1 gap-2 p-3 my-4 rounded-md`}
         >
           <div className="w-full max-[1030px]:col-span-2 max-[989px]:col-span-1 max-[815px]:col-span-2 max-[425px]:col-span-1">
             <SearchBox placeholder="Search here..." width="300px" />
-          </div>
-          <div className="w-full">
-            <select
-              name=""
-              id=""
-              className="w-full border outline-none border-[rgba(0,0,0,0.2)] dark:border-[rgba(255,255,255,0.2)] focus:border-[rgba(0,0,0,0.4)] dark:focus:border-[rgba(255,255,255,0.4)] dark:bg-[#151515] text-[14px] rounded-md px-3 py-2"
-            >
-              <option value="">All Category</option>
-              <option value="">Category 1</option>
-              <option value="">Category 2</option>
-            </select>
           </div>
           <div className="w-full">
             <select
@@ -54,18 +42,7 @@ const page = () => {
               <option value="">ID</option>
               <option value="">Name</option>
               <option value="">Price</option>
-              <option value="">Payment</option>
             </select>
-          </div>
-          <div className="w-full">
-            <Link href="/orders/details">
-              <Button
-                className={`w-full capitalize! bg-green-500! hover:bg-green-600! text-white! rounded-md! px-4! py-2!`}
-              >
-                <MdAddCircle size={20} className="mr-1" />
-                Export all order
-              </Button>
-            </Link>
           </div>
         </div>
         <div className="w-full overflow-x-auto">

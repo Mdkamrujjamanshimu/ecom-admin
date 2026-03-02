@@ -103,8 +103,8 @@ const page = () => {
               className="w-full border outline-none border-[rgba(0,0,0,0.2)] dark:border-[rgba(255,255,255,0.2)] focus:border-[rgba(0,0,0,0.4)] dark:focus:border-[rgba(255,255,255,0.4)] dark:bg-[#151515] text-[14px] rounded-md px-3 py-2"
             >
               <option value="">All Status</option>
-              <option value="">Publish</option>
-              <option value="">Draft</option>
+              <option value="">In stock</option>
+              <option value="">Out of stock</option>
             </select>
           </div>
           <div className="w-full">
@@ -117,7 +117,6 @@ const page = () => {
               <option value="">ID</option>
               <option value="">Name</option>
               <option value="">Price</option>
-              <option value="">Payment</option>
             </select>
           </div>
           <div className="w-full">
