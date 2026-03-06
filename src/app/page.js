@@ -1,10 +1,10 @@
-"use client";
-import DashboardBoxes from "@/Components/DashboardBox";
+import Dashboard from "@/Components/Dashboard";
+
 
 export default function Home() {
   return (
     <>
-      <DashboardBoxes />
+      <Dashboard />
     </>
   );
 }
