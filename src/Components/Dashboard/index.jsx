@@ -1,4 +1,6 @@
+import OrdersPieChart from "./OrdersPieChart";
 import RecentOrders from "./RecentOrders";
+import RevenueChart from "./RevenueChart";
 import SalesChart from "./SalesChart";
 import StatCard from "./StatCard";
 
@@ -16,6 +18,11 @@ export default function DashboardPage() {
 
       {/* Sales Chart */}
       <SalesChart />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+        <RevenueChart />
+
+        <OrdersPieChart />
+      </div>
 
       {/* Orders */}
       <RecentOrders />

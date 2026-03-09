@@ -24,7 +24,7 @@ const orders = [
 
 export default function RecentOrders() {
   return (
-    <div className="bg-white dark:bg-gray-900 border rounded-xl p-6 mt-6">
+    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 mt-6">
       <h2 className="text-lg font-semibold mb-4">Recent Orders</h2>
 
       <div className="w-full overflow-x-auto">

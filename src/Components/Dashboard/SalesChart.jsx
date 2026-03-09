@@ -21,7 +21,7 @@ const data = [
 
 export default function SalesChart() {
   return (
-    <div className="bg-white dark:bg-gray-900 border rounded-xl p-4 sm:p-5 md:p-6 mt-4 sm:mt-6 w-full">
+    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800  rounded-xl p-4 sm:p-5 md:p-6 mt-4 sm:mt-6 w-full">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-4">
         <h2 className="text-base sm:text-lg font-semibold">Sales Overview</h2>
