@@ -16,7 +16,7 @@ export default function OrdersPieChart() {
       className="
       rounded-2xl
       border border-gray-200 dark:border-gray-800
-      bg-white/70 dark:bg-gray-900/70
+      bg-white dark:bg-gray-800
       backdrop-blur
       p-4 sm:p-5 lg:p-6
       "
@@ -46,7 +46,7 @@ export default function OrdersPieChart() {
 
             <Tooltip
               contentStyle={{
-                backgroundColor: "#111827",
+                backgroundColor: "#637190",
                 border: "none",
                 borderRadius: "8px",
                 color: "#fff",

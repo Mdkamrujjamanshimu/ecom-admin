@@ -7,7 +7,7 @@ const activities = [
 
 export default function ActivityTimeline() {
   return (
-    <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 backdrop-blur p-6">
+    <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 backdrop-blur p-6">
       <h2 className="text-lg font-semibold mb-6">Recent Activity</h2>
 
       <ul className="space-y-4">
