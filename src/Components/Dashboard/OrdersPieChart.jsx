@@ -1,6 +1,6 @@
 "use client";
 
-import { PieChart, Pie, Tooltip, ResponsiveContainer, Cell } from "recharts";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
 const data = [
   { name: "Completed", value: 400 },
@@ -12,30 +12,41 @@ const COLORS = ["#10b981", "#f59e0b", "#ef4444"];
 
 export default function OrdersPieChart() {
   return (
-    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 w-full">
-      <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+    <div
+      className="
+      rounded-2xl
+      border border-gray-200 dark:border-gray-800
+      bg-white/70 dark:bg-gray-900/70
+      backdrop-blur
+      p-4 sm:p-5 lg:p-6
+      "
+    >
+      {/* Header */}
+      <h2 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">
         Order Status
       </h2>
 
-      <div className="w-full h-[300px]">
+      {/* Chart */}
+      <div className="w-full h-[220px] sm:h-[260px] md:h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
               data={data}
               dataKey="value"
               nameKey="name"
-              outerRadius={100}
+              outerRadius={80}
+              innerRadius={40}
+              paddingAngle={2}
               label
-              labelLine={false}
             >
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                <Cell key={index} fill={COLORS[index]} />
               ))}
             </Pie>
 
             <Tooltip
               contentStyle={{
-                backgroundColor: "#cacfdb",
+                backgroundColor: "#111827",
                 border: "none",
                 borderRadius: "8px",
                 color: "#fff",

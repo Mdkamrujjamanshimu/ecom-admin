@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { BiMenuAltLeft } from "react-icons/bi";
@@ -8,82 +10,110 @@ import { useTheme } from "@/app/context/ThemeContext";
 import { useLayout } from "@/app/context/LayoutContext";
 
 const Header = () => {
-  const { state, dispatch } = useTheme();
-  const { dispatch: layoutDispatch } = useLayout();
-  const { state: layoutState } = useLayout();
+  const { theme, toggleTheme } = useTheme();
+  const { dispatch: layoutDispatch, state: layoutState } = useLayout();
 
-  const toggleTheme = () => dispatch({ type: "TOGGLE_THEME" });
-
-  // ! STATE TO STORE HEADER HEIGHT
   const [headerHeight, setHeaderHeight] = useState(0);
-
-  // ! REF TO GET HEADER ELEMENT
   const headerRef = useRef(null);
 
-  // ! SET HEADER HEIGHT
+  //! Calculate header height
   useEffect(() => {
     const handleResize = () => {
       if (headerRef.current) {
         setHeaderHeight(headerRef.current.offsetHeight);
       }
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
 
   return (
     <>
       <header
         ref={headerRef}
-        className={`flex fixed top-0 z-[1000] px-2 py-3 justify-between shadow-md bg-[#ffffff] dark:bg-[#111113] transition-all duration-300 ${
+        className={`flex items-center justify-between fixed top-0 z-[1000]
+        px-4 py-3
+        border-b border-gray-200 dark:border-gray-800
+        shadow-sm
+        backdrop-blur-md
+        bg-white/90 dark:bg-[#0f0f11]/90
+        transition-all duration-300
+        ${
           layoutState.sidebarOpen
             ? layoutState.isDesktop
-              ? "left-[20%] w-[80%]"
+              ? "left-[260px] w-[calc(100%-260px)]"
               : "left-[170px] w-[calc(100%-170px)]"
             : "left-0 w-full"
         }`}
       >
-        <div className="flex items-center gap-2 max-[355px]:gap-0">
-          {/* toggle icon */}
+        {/* LEFT SECTION */}
+        <div className="flex items-center gap-3">
+          {/* Sidebar Toggle */}
           <Button
-            className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900! max-[331px]:m-0! max-[331px]:p-0!"
+            className="min-w-10! w-10! h-10! rounded-full!
+            text-gray-700! dark:text-gray-300!
+            hover:bg-gray-100! dark:hover:bg-gray-900!
+            transition-all!"
             onClick={() => layoutDispatch({ type: "TOGGLE_SIDEBAR" })}
           >
-            <BiMenuAltLeft size={25} />
+            <BiMenuAltLeft size={26} />
           </Button>
 
-          <div className="max-[550px]:hidden">
-            <SearchBox placeholder="Search here..." width="300px" />
+          {/* Search */}
+          <div className="max-[640px]:hidden">
+            <SearchBox placeholder="Search products, orders..." width="300px" />
           </div>
         </div>
 
-        <div className="flex items-center justify-between">
+        {/* RIGHT SECTION */}
+        <div className="flex items-center gap-2">
+          {/* Theme Toggle */}
           <Button
             onClick={toggleTheme}
-            className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900!"
+            className="min-w-10! w-10! h-10! rounded-full!
+            text-gray-700! dark:text-gray-300!
+            hover:bg-gray-100! dark:hover:bg-gray-900!
+            transition-all!"
           >
-            {state.darkMode ? (
-              <MdLightMode size={25} />
+            {theme === "dark" ? (
+              <MdLightMode size={22} />
             ) : (
-              <MdDarkMode size={25} />
+              <MdDarkMode size={22} />
             )}
           </Button>
 
-          <Button className="min-w-10! w-10! h-10! rounded-full! text-gray-800! dark:text-gray-200! hover:bg-gray-200! dark:hover:bg-gray-900! max-[550px]:hidden!">
-            <FaRegBell size={25} />
+          {/* Notification */}
+          <Button
+            className="relative min-w-10! w-10! h-10! rounded-full!
+            text-gray-700! dark:text-gray-300!
+            hover:bg-gray-100! dark:hover:bg-gray-900!
+            transition-all!
+            max-[640px]:hidden!"
+          >
+            <FaRegBell size={20} />
+
+            {/* Notification badge */}
+            <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
           </Button>
 
-          <div className="flex items-center">
-            <Button className="min-w-8! w-8! h-8! rounded-full! flex! items-center! justify-center! bg-gray-800! dark:bg-blue-600! text-white!">
+          {/* Profile */}
+          <div className="flex items-center ml-1">
+            <Button
+              className="min-w-9! w-9! h-9! rounded-full!
+              flex! items-center! justify-center!
+              bg-gradient-to-r from-blue-500 to-indigo-600!
+              text-white! font-semibold!"
+            >
               K
             </Button>
           </div>
         </div>
       </header>
 
-      {/* TO HANDLE HEADER HEIGHT */}
+      {/* Header spacer */}
       <div style={{ height: headerHeight }}></div>
     </>
   );

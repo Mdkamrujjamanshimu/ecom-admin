@@ -15,11 +15,22 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActions.triggerOnFocusChange": true,
   "editor.defaultColorDecorators": "always",
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
   },
   "emmet.triggerExpansionOnTab": true,
   "path-intellisense.absolutePathToWorkspace": true,
-  "path-intellisense.showHiddenFiles": true
+  "path-intellisense.showHiddenFiles": true,
+  "workbench.iconTheme": "material-icon-theme"
 }
+

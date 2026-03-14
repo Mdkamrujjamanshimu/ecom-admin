@@ -21,26 +21,36 @@ const data = [
 
 export default function RevenueChart() {
   return (
-    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-4 sm:p-5 w-full">
-      <h2 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+    <div
+      className="
+      rounded-2xl
+      border border-gray-200 dark:border-gray-800
+      bg-white/70 dark:bg-gray-900/70
+      backdrop-blur
+      p-4 sm:p-5 lg:p-6
+      "
+    >
+      {/* Header */}
+      <h2 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">
         Monthly Revenue
       </h2>
 
+      {/* Chart */}
       <div className="w-full h-[220px] sm:h-[260px] md:h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
             margin={{ top: 5, right: 10, left: -10, bottom: 5 }}
           >
-            <CartesianGrid
-              strokeDasharray="3 3"
-              stroke="#e5e7eb"
-              className="dark:stroke-gray-700"
+            <CartesianGrid strokeDasharray="3 3" />
+
+            <XAxis
+              dataKey="month"
+              tick={{ fontSize: 12 }}
+              interval="preserveStartEnd"
             />
 
-            <XAxis dataKey="month" tick={{ fontSize: 12 }} stroke="#6b7280" />
-
-            <YAxis tick={{ fontSize: 12 }} stroke="#6b7280" />
+            <YAxis tick={{ fontSize: 12 }} width={35} />
 
             <Tooltip
               contentStyle={{
@@ -53,9 +63,9 @@ export default function RevenueChart() {
 
             <Bar
               dataKey="revenue"
-              fill="#3b82f6"
+              fill="#6366f1"
               radius={[6, 6, 0, 0]}
-              barSize={30}
+              barSize={25}
             />
           </BarChart>
         </ResponsiveContainer>

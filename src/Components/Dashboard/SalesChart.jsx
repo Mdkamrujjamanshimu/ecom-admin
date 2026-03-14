@@ -21,37 +21,48 @@ const data = [
 
 export default function SalesChart() {
   return (
-    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800  rounded-xl p-4 sm:p-5 md:p-6 mt-4 sm:mt-6 w-full">
+    <div
+      className="
+      rounded-2xl
+      border border-gray-200 dark:border-gray-800
+      bg-white/70 dark:bg-gray-900/70
+      backdrop-blur
+      p-4 sm:p-5 lg:p-6
+      "
+    >
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
         <h2 className="text-base sm:text-lg font-semibold">Sales Overview</h2>
 
-        <select className="border rounded-md px-2 py-1 text-sm cursor-pointer text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 w-full sm:w-auto">
+        <select className="text-sm border rounded-md px-3 py-1.5 bg-white dark:bg-gray-800 w-full sm:w-auto">
           <option>This Month</option>
           <option>Last Month</option>
         </select>
       </div>
 
       {/* Chart */}
-      <div className="w-full h-56 sm:h-64 md:h-72">
+      <div className="w-full h-[220px] sm:h-[260px] md:h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data}>
+          <LineChart
+            data={data}
+            margin={{ top: 5, right: 10, left: -10, bottom: 5 }}
+          >
             <CartesianGrid strokeDasharray="3 3" />
 
-            <XAxis dataKey="name" tick={{ fontSize: 12 }} />
-
-            <YAxis
-              tickFormatter={(value) => `${value}%`}
+            <XAxis
+              dataKey="name"
               tick={{ fontSize: 12 }}
-              width={40}
+              interval="preserveStartEnd"
             />
 
-            <Tooltip formatter={(value) => `${value}%`} />
+            <YAxis tick={{ fontSize: 12 }} width={35} />
+
+            <Tooltip />
 
             <Line
               type="monotone"
               dataKey="sales"
-              stroke="#2563eb"
+              stroke="#3b82f6"
               strokeWidth={3}
               dot={{ r: 3 }}
               activeDot={{ r: 5 }}
