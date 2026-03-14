@@ -34,7 +34,7 @@ export default function SalesChart() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
         <h2 className="text-base sm:text-lg font-semibold">Sales Overview</h2>
 
-        <select className="text-sm border rounded-md px-3 py-1.5 bg-white dark:bg-gray-800 w-full sm:w-auto">
+        <select className="text-sm border rounded-md px-3 py-1.5 bg-white dark:bg-gray-800 w-full sm:w-auto cursor-pointer">
           <option>This Month</option>
           <option>Last Month</option>
         </select>
@@ -57,7 +57,14 @@ export default function SalesChart() {
 
             <YAxis tick={{ fontSize: 12 }} width={35} />
 
-            <Tooltip />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "#111827",
+                border: "none",
+                borderRadius: "8px",
+                color: "#fff",
+              }}
+            />
 
             <Line
               type="monotone"

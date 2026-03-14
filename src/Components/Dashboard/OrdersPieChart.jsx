@@ -46,11 +46,11 @@ export default function OrdersPieChart() {
 
             <Tooltip
               contentStyle={{
-                backgroundColor: "#637190",
+                backgroundColor: "#111827",
                 border: "none",
                 borderRadius: "8px",
-                color: "#fff",
               }}
+              itemStyle={{ color: "#fff" }}
             />
           </PieChart>
         </ResponsiveContainer>
