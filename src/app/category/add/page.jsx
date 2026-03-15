@@ -2,44 +2,13 @@
 
 import Button from "@mui/material/Button";
 import React, { useState, useRef } from "react";
+import DragDropImg from "../../../Components/DragDropImg";
 
 export default function AddCategoryPage() {
   const [categoryName, setCategoryName] = useState("");
   const [categoryImage, setCategoryImage] = useState(null);
-  const [previewImage, setPreviewImage] = useState(null);
+
   const [error, setError] = useState("");
-  const fileInputRef = useRef(null);
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-
-    if (file) {
-      setCategoryImage(file);
-      setPreviewImage(URL.createObjectURL(file));
-    }
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-
-    const file = e.dataTransfer.files[0];
-
-    if (file && file.type.startsWith("image/")) {
-      setCategoryImage(file);
-      setPreviewImage(URL.createObjectURL(file));
-    }
-  };
-
-  const handleDragOver = (e) => e.preventDefault();
-
-  const removeImage = () => {
-    setCategoryImage(null);
-    setPreviewImage(null);
-
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,7 +29,8 @@ export default function AddCategoryPage() {
 
     // reset form
     setCategoryName("");
-    removeImage();
+    // removeImage();
+    setCategoryImage(null);
   };
 
   return (
@@ -93,9 +63,7 @@ export default function AddCategoryPage() {
           <div className="grid grid-cols-2 gap-6 max-[650px]:grid-cols-1">
             {/* Category Name */}
             <div className="flex flex-col gap-3">
-              <label className="text-gray-700 dark:text-gray-300 font-semibold">
-                Category Name
-              </label>
+              <label className="text-[18px] font-medium">Category Name</label>
 
               <input
                 type="text"
@@ -124,80 +92,7 @@ export default function AddCategoryPage() {
 
             {/* Image Upload */}
             <div className="flex flex-col gap-3">
-              <label className="text-gray-700 dark:text-gray-300 font-semibold">
-                Category Image <span className="text-gray-400">(optional)</span>
-              </label>
-
-              <div
-                onDrop={handleDrop}
-                onDragOver={handleDragOver}
-                onClick={() => fileInputRef.current.click()}
-                className="
-                border-2 border-dashed
-                border-gray-300
-                dark:border-gray-600
-                rounded-xl
-                p-6
-                flex
-                items-center
-                justify-center
-                text-center
-                cursor-pointer
-                bg-gray-50
-                dark:bg-gray-700
-                hover:shadow-lg
-                transition
-                relative
-                "
-              >
-                {previewImage ? (
-                  <div className="relative">
-                    <img
-                      src={previewImage}
-                      alt="preview"
-                      className="w-40 h-40 object-cover rounded-xl"
-                    />
-
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        removeImage();
-                      }}
-                      className="
-                      absolute
-                      -top-3
-                      -right-3
-                      bg-red-500
-                      text-white
-                      w-8
-                      h-8
-                      rounded-full
-                      flex
-                      items-center
-                      justify-center
-                      shadow
-                      hover:bg-red-600
-                      transition
-                      "
-                    >
-                      ✕
-                    </button>
-                  </div>
-                ) : (
-                  <p className="text-gray-400 dark:text-gray-300">
-                    Click or Drag & Drop image here
-                  </p>
-                )}
-
-                <input
-                  type="file"
-                  accept="image/*"
-                  ref={fileInputRef}
-                  onChange={handleImageChange}
-                  className="hidden"
-                />
-              </div>
+              <DragDropImg label="Category Image" />
             </div>
           </div>
 

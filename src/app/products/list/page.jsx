@@ -1,199 +1,225 @@
 "use client";
-import { Button, FormControlLabel, FormGroup } from "@mui/material";
-import React from "react";
+
+import SearchBox from "@/Components/SearchBox";
+import { Button } from "@mui/material";
+import React, { useState } from "react";
+import { MdAddCircle } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import Switch from "@mui/material/Switch";
-import { styled } from "@mui/material/styles";
-import SearchBox from "@/Components/SearchBox";
 import Link from "next/link";
-import { MdAddCircle } from "react-icons/md";
 
-// Custom styled switch component for publish status (material-ui)
-const IOSSwitch = styled((props) => (
-  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
-))(({ theme }) => ({
-  width: 42,
-  height: 26,
-  padding: 0,
-  "& .MuiSwitch-switchBase": {
-    padding: 0,
-    margin: 2,
-    transitionDuration: "300ms",
-    "&.Mui-checked": {
-      transform: "translateX(16px)",
-      color: "#fff",
-      "& + .MuiSwitch-track": {
-        backgroundColor: "#65C466",
-        opacity: 1,
-        border: 0,
-        ...theme.applyStyles("dark", {
-          backgroundColor: "#2ECA45",
-        }),
-      },
-      "&.Mui-disabled + .MuiSwitch-track": {
-        opacity: 0.5,
-      },
-    },
-    "&.Mui-focusVisible .MuiSwitch-thumb": {
-      color: "#33cf4d",
-      border: "6px solid #fff",
-    },
-    "&.Mui-disabled .MuiSwitch-thumb": {
-      color: theme.palette.grey[100],
-      ...theme.applyStyles("dark", {
-        color: theme.palette.grey[600],
-      }),
-    },
-    "&.Mui-disabled + .MuiSwitch-track": {
-      opacity: 0.7,
-      ...theme.applyStyles("dark", {
-        opacity: 0.3,
-      }),
-    },
-  },
-  "& .MuiSwitch-thumb": {
-    boxSizing: "border-box",
-    width: 22,
-    height: 22,
-  },
-  "& .MuiSwitch-track": {
-    borderRadius: 26 / 2,
-    backgroundColor: "#E9E9EA",
-    opacity: 1,
-    transition: theme.transitions.create(["background-color"], {
-      duration: 500,
-    }),
-    ...theme.applyStyles("dark", {
-      backgroundColor: "#39393D",
-    }),
-  },
-}));
-// End of custom switch component
+/* ===============================
+        JSON DATA
+================================*/
 
-const page = () => {
+const productData = [
+  {
+    id: "#PRO-001",
+    name: "Marketing Mastery",
+    category: "Category 1",
+    price: 200,
+    quantity: 20,
+    sale: 6,
+    stock: "In Stock",
+    createdAt: "2024-01-01",
+  },
+  {
+    id: "#PRO-002",
+    name: "Web Design Guide",
+    category: "Category 2",
+    price: 150,
+    quantity: 15,
+    sale: 4,
+    stock: "In Stock",
+    createdAt: "2024-01-05",
+  },
+  {
+    id: "#PRO-003",
+    name: "JavaScript Basics",
+    category: "Category 1",
+    price: 180,
+    quantity: 10,
+    sale: 3,
+    stock: "Out of Stock",
+    createdAt: "2024-01-10",
+  },
+];
+
+/* ===============================
+          COMPONENT
+================================*/
+
+export default function ProductListPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemsPerPage = 6;
+
+  const filteredData = productData.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.id.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+  const currentItems = filteredData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage,
+  );
+
   return (
-    <div>
-      <h2 className="text-2xl font-bold py-2 mt-3 mb-5">All products</h2>
+    <div className="p-4 sm:p-6 lg:p-8">
+      {/* PAGE TITLE */}
 
-      {/* PRODUCT LIST TABLE */}
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">
+        All Products
+      </h2>
 
-      <div className="rounded-md border border-gray-200 dark:border-[#282828]">
-        <div
-          className={`grid grid-cols-5 max-[1030px]:grid-cols-4 max-[989px]:grid-cols-5 max-[815px]:grid-cols-4 max-[660px]:grid-cols-3 max-[510px]:grid-cols-2 max-[425px]:grid-cols-1 gap-2 p-3 my-4 rounded-md`}
-        >
-          <div className="w-full max-[1030px]:col-span-2 max-[989px]:col-span-1 max-[815px]:col-span-2 max-[425px]:col-span-1">
-            <SearchBox placeholder="Search here..." width="300px" />
-          </div>
-          <div className="w-full">
-            <select
-              name=""
-              id=""
-              className="w-full border outline-none border-[rgba(0,0,0,0.2)] dark:border-[rgba(255,255,255,0.2)] focus:border-[rgba(0,0,0,0.4)] dark:focus:border-[rgba(255,255,255,0.4)] dark:bg-[#151515] text-[14px] rounded-md px-3 py-2"
-            >
-              <option value="">All Category</option>
-              <option value="">Category 1</option>
-              <option value="">Category 2</option>
-            </select>
-          </div>
-          <div className="w-full">
-            <select
-              name=""
-              id=""
-              className="w-full border outline-none border-[rgba(0,0,0,0.2)] dark:border-[rgba(255,255,255,0.2)] focus:border-[rgba(0,0,0,0.4)] dark:focus:border-[rgba(255,255,255,0.4)] dark:bg-[#151515] text-[14px] rounded-md px-3 py-2"
-            >
-              <option value="">All Status</option>
-              <option value="">In stock</option>
-              <option value="">Out of stock</option>
-            </select>
-          </div>
-          <div className="w-full">
-            <select
-              name=""
-              id=""
-              className="w-full border outline-none border-[rgba(0,0,0,0.2)] dark:border-[rgba(255,255,255,0.2)] focus:border-[rgba(0,0,0,0.4)] dark:focus:border-[rgba(255,255,255,0.4)] dark:bg-[#151515] text-[14px] rounded-md px-3 py-2"
-            >
-              <option value="">Sort by (Default)</option>
-              <option value="">ID</option>
-              <option value="">Name</option>
-              <option value="">Price</option>
-            </select>
-          </div>
-          <div className="w-full">
-            <Link href="/products/add">
-              <Button
-                className={`w-full capitalize! bg-green-500! hover:bg-green-600! text-white! rounded-md! px-4! py-2!`}
-              >
-                <MdAddCircle size={20} className="mr-1" />
-                Add product
-              </Button>
-            </Link>
-          </div>
+      {/* FILTERS */}
+
+      <div className="grid grid-cols-5 max-[1220px]:grid-cols-4 max-[1030px]:grid-cols-3 max-[570px]:grid-cols-2 max-[410px]:grid-cols-1 gap-3 mb-6">
+        <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+          <SearchBox
+            placeholder="Search product..."
+            width="100%"
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setCurrentPage(1);
+            }}
+          />
         </div>
-        <div className="w-full overflow-x-auto">
-          <table className="min-w-[1100px] w-full">
-            <thead className="bg-gray-100 dark:bg-[#131313]">
-              <tr className="text-gray-700 dark:text-gray-300">
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Sl
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Product Name
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Product ID
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Category
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Price
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Quantity
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Sale
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Stock
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Start date
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200 bg-white dark:bg-[#181818]">
-              <tr className="text-gray-700 dark:text-gray-300">
-                <td className="px-4 py-3 text-sm">1</td>
-                <td className="px-4 py-3 text-sm font-medium ">
-                  মার্কেটিং মাস্টারি (ডিজিটাল মার্কেটিংয়ের পূর্ণাঙ্গ গাইডলাইন)
-                </td>
-                <td className="px-4 py-3 text-sm">#PRO-001</td>
-                <td className="px-4 py-3 text-sm">category 1</td>
-                <td className="px-4 py-3 text-sm">200</td>
-                <td className="px-4 py-3 text-sm">20</td>
-                <td className="px-4 py-3 text-sm">6</td>
-                <td className="px-4 py-3 text-sm">In Stock</td>
-                <td className="px-4 py-3 text-sm">2024-01-01</td>
-                <td className="px-4 py-3 text-[18px] ">
-                  <div className="flex gap-2">
-                    <Link href="/products/edit">
-                      <FiEdit className="text-blue-500 cursor-pointer" />
-                    </Link>
-                    <RiDeleteBin5Line className="text-red-500 cursor-pointer" />
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
+        <select className="w-full border border-gray-300 dark:border-gray-700 rounded-md px-3 py-2 bg-white dark:bg-[#151515] text-gray-700 dark:text-gray-300 focus:ring-2 focus:ring-blue-400">
+          <option>All Category</option>
+          <option>Category 1</option>
+          <option>Category 2</option>
+        </select>
+
+        <select className="w-full border border-gray-300 dark:border-gray-700 rounded-md px-3 py-2 bg-white dark:bg-[#151515] text-gray-700 dark:text-gray-300 focus:ring-2 focus:ring-blue-400">
+          <option>All Stock</option>
+          <option>In Stock</option>
+          <option>Out of Stock</option>
+        </select>
+
+        <select className="w-full border border-gray-300 dark:border-gray-700 rounded-md px-3 py-2 bg-white dark:bg-[#151515] text-gray-700 dark:text-gray-300 focus:ring-2 focus:ring-blue-400">
+          <option>Sort by (Default)</option>
+          <option>ID</option>
+          <option>Name</option>
+          <option>Price</option>
+        </select>
+
+        <Link href="/products/add" className="w-full">
+          <Button className="w-full! flex! items-center! justify-center! gap-2! bg-green-500! hover:bg-green-600! text-white! rounded-md! py-2! transition-all!">
+            <MdAddCircle size={20} />
+            Add Product
+          </Button>
+        </Link>
       </div>
+
+      {/* TABLE */}
+
+      <div className="overflow-x-auto rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 shadow-lg">
+        <table className="min-w-[900px] w-full text-sm sm:text-base">
+          <thead className="bg-linear-to-r from-gray-100 to-gray-50 dark:from-[#1a1a1a] dark:to-[#131313]">
+            <tr className="text-gray-700 dark:text-gray-300">
+              {[
+                "Sl",
+                "Product",
+                "Product ID",
+                "Category",
+                "Price",
+                "Quantity",
+                "Sale",
+                "Stock",
+                "Created Date",
+                "Action",
+              ].map((th, i) => (
+                <th
+                  key={i}
+                  className="px-4 py-3 text-left font-semibold whitespace-nowrap"
+                >
+                  {th}
+                </th>
+              ))}
+            </tr>
+          </thead>
+
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+            {currentItems.length > 0 ? (
+              currentItems.map((item, idx) => (
+                <tr
+                  key={item.id}
+                  className="text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                >
+                  <td className="px-4 py-3">
+                    {(currentPage - 1) * itemsPerPage + idx + 1}
+                  </td>
+
+                  <td className="px-4 py-3 font-medium">{item.name}</td>
+
+                  <td className="px-4 py-3">{item.id}</td>
+
+                  <td className="px-4 py-3">{item.category}</td>
+
+                  <td className="px-4 py-3">
+                    <span className="font-bold text-xl">৳</span>
+                    {item.price}
+                  </td>
+
+                  <td className="px-4 py-3">{item.quantity}</td>
+
+                  <td className="px-4 py-3">{item.sale}</td>
+
+                  <td className="px-4 py-3">{item.stock}</td>
+
+                  <td className="px-4 py-3">{item.createdAt}</td>
+
+                  <td className="px-4 py-3">
+                    <div className="flex items-center gap-3">
+                      <Link href="/products/edit">
+                        <FiEdit className="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors" />
+                      </Link>
+
+                      <RiDeleteBin5Line className="text-red-500 hover:text-red-600 cursor-pointer transition-colors" />
+                    </div>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td
+                  colSpan={11}
+                  className="text-center py-6 text-gray-500 dark:text-gray-400"
+                >
+                  No products found
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      {/* PAGINATION */}
+
+      {totalPages > 1 && (
+        <div className="flex justify-end mt-4 gap-2 flex-wrap">
+          {Array.from({ length: totalPages }, (_, i) => (
+            <Button
+              key={i}
+              onClick={() => setCurrentPage(i + 1)}
+              className={`px-3 py-1 rounded-lg whitespace-nowrap ${
+                currentPage === i + 1
+                  ? "bg-linear-to-r from-blue-500 to-blue-600 text-white"
+                  : "bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700"
+              }`}
+            >
+              {i + 1}
+            </Button>
+          ))}
+        </div>
+      )}
     </div>
   );
-};
-
-export default page;
+}

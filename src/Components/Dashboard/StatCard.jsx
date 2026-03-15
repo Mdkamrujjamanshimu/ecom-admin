@@ -21,7 +21,7 @@ export default function StatCard({ title, value, growth }) {
 
         <div
           className="w-12 h-12 flex items-center justify-center rounded-xl
-        bg-blue-100 dark:bg-blue-900/30 text-blue-600"
+        bg-blue-100 dark:bg-blue-900/30 text-blue-600 font-extrabold"
         >
           ৳
         </div>
