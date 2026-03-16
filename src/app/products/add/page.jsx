@@ -147,8 +147,16 @@ const page = () => {
               control={
                 <Checkbox
                   sx={{
-                    color: "#fff",
-                    "&.Mui-checked": { color: "#fff" },
+                    color: "#111827", // gray-900 (light mode)
+                    "&.Mui-checked": {
+                      color: "#111827",
+                    },
+                    ".dark &": {
+                      color: "#fff",
+                    },
+                    ".dark &.Mui-checked": {
+                      color: "#fff",
+                    },
                   }}
                 />
               }
@@ -159,8 +167,16 @@ const page = () => {
               control={
                 <Checkbox
                   sx={{
-                    color: "#fff",
-                    "&.Mui-checked": { color: "#fff" },
+                    color: "#111827",
+                    "&.Mui-checked": {
+                      color: "#111827",
+                    },
+                    ".dark &": {
+                      color: "#fff",
+                    },
+                    ".dark &.Mui-checked": {
+                      color: "#fff",
+                    },
                   }}
                 />
               }

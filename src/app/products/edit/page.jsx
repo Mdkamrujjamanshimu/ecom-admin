@@ -210,11 +210,42 @@ const page = () => {
 
           <FormGroup className="flex! flex-row! gap-2!">
             <FormControlLabel
-              control={<Checkbox sx={{ color: "white" }} />}
+              control={
+                <Checkbox
+                  sx={{
+                    color: "#111827", // gray-900 (light mode)
+                    "&.Mui-checked": {
+                      color: "#111827",
+                    },
+                    ".dark &": {
+                      color: "#fff",
+                    },
+                    ".dark &.Mui-checked": {
+                      color: "#fff",
+                    },
+                  }}
+                />
+              }
               label="Best Category"
             />
+
             <FormControlLabel
-              control={<Checkbox sx={{ color: "white" }} />}
+              control={
+                <Checkbox
+                  sx={{
+                    color: "#111827",
+                    "&.Mui-checked": {
+                      color: "#111827",
+                    },
+                    ".dark &": {
+                      color: "#fff",
+                    },
+                    ".dark &.Mui-checked": {
+                      color: "#fff",
+                    },
+                  }}
+                />
+              }
               label="New Product"
             />
           </FormGroup>
