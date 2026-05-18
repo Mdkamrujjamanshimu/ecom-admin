@@ -1,15 +1,19 @@
 import React from "react";
 import { IoSearch } from "react-icons/io5";
-// style={{ width: props.width }}
 
-const SearchBox = (props) => {
+const SearchBox = ({ placeholder, width = "100%", value, onChange }) => {
   return (
-    <div className={`searchBox relative`} >
-      <IoSearch size={18} className="absolute top-3 left-2.5 text-gray-500" />
+    <div className="relative" style={{ width }}>
+      <IoSearch
+        size={18}
+        className="absolute top-4 left-4 text-amber-600 dark:text-amber-300 transition-colors"
+      />
       <input
         type="text"
-        placeholder={props.placeholder}
-        className="w-full h-10 outline-none border border-[rgba(0,0,0,0.2)] dark:border-[rgba(255,255,255,0.2)] rounded-md px-3 pl-8 text-[14px] focus:border-[rgba(0,0,0,0.4)] dark:focus:border-[rgba(255,255,255,0.4)] dark:bg-[#151515] dark:text-gray-200 text-gray-800 "
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className="w-full h-14 pr-4 pl-12 rounded-[28px] border border-slate-200/60 dark:border-white/20 text-sm placeholder-slate-400 dark:placeholder-slate-500 shadow-sm dark:shadow-glow transition focus:border-amber-500 dark:focus:border-amber-300 focus:ring-2 focus:ring-amber-500/20 dark:focus:ring-amber-300/20 focus:outline-none"
       />
     </div>
   );

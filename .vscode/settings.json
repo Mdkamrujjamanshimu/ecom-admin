@@ -3,7 +3,7 @@
   "files.autoSave": "afterDelay",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.wordWrap": "on",
-  "workbench.colorTheme": "Night Owl",
+  "workbench.colorTheme": "One Dark Pro Night Flat",
   "editor.formatOnPaste": true,
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingComments": "always",
@@ -31,6 +31,6 @@
   "emmet.triggerExpansionOnTab": true,
   "path-intellisense.absolutePathToWorkspace": true,
   "path-intellisense.showHiddenFiles": true,
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "cSpell.words": ["ecommerce"]
 }
-
