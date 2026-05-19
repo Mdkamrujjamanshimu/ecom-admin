@@ -70,7 +70,7 @@ const page = () => {
               <span className="inline-flex items-center rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 dark:bg-slate-800/70 dark:text-slate-200">{order.products.length} products</span>
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3 xl:auto-cols-fr xl:grid-flow-col w-full">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 w-full">
             <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm shadow-slate-200/40 transition-colors duration-300 dark:border-slate-700 dark:bg-slate-900 dark:shadow-slate-950/40">
               <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">Order value</p>
               <p className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white">৳ {order.total.toFixed(2)}</p>
@@ -89,9 +89,9 @@ const page = () => {
 
 
       {/* order details section */}
-      <div className="grid gap-6 xl:grid-cols-[1.7fr_1fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.7fr_1fr]">
         <div className="space-y-6">
-          <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-xl dark:border-slate-700 dark:bg-slate-950">
+          <div className="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-8 shadow-xl dark:border-slate-700 dark:bg-slate-950">
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2">
                 <p className="text-sm uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">Customer</p>
