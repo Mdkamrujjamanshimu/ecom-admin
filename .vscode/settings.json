@@ -32,5 +32,10 @@
   "path-intellisense.absolutePathToWorkspace": true,
   "path-intellisense.showHiddenFiles": true,
   "workbench.iconTheme": "material-icon-theme",
-  "cSpell.words": ["ecommerce"]
+  "cSpell.words": [
+    "ecommerce"
+  ],
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }

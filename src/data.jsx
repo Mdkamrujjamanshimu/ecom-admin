@@ -57,5 +57,27 @@ export const sidebarMenu = [
     title: "Orders",
     href: "/orders",
     icon: <ShoppingCartTwoToneIcon size={16} />,
+    // items: [
+    //   {
+    //     title: "All Orders",
+    //     href: "/orders",
+    //   },
+    //   {
+    //     title: "Pending Orders",
+    //     href: "/orders/pending",
+    //   },
+    //   {
+    //     title: "Completed Orders",
+    //     href: "/orders/completed",
+    //   },
+    //   {
+    //     title: "Order Tracking",
+    //     href: "/orders/tracking",
+    //   },
+    //   {
+    //     title: "Order Details",
+    //     href: "/orders/details",
+    //   },
+    // ],
   },
 ];
