@@ -55,7 +55,7 @@ const Header = () => {
             : "left-0 w-full"
         }`}
       >
-      {/* left-[261px]  left-[171px]*/}
+      {/* left-[261px]  left-[251px]*/}
         {/* Premium Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Light Mode Effects */}
@@ -167,8 +167,8 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Header spacer */}
-      <div style={{ height: headerHeight }}></div>
+      {/* Header spacer (reduced to half so content sits closer below the fixed header) */}
+      <div style={{ height: headerHeight * 0.2 }}></div>
     </>
   );
 };

@@ -74,7 +74,7 @@ const ThemeWrapper = ({ children }) => {
               layoutState.sidebarOpen
                 ? layoutState.isDesktop
                   ? "w-[260px]"
-                  : "w-[170px]"
+                  : "w-[250px]"
                 : "w-0"
             }`}
           >
@@ -93,7 +93,7 @@ const ThemeWrapper = ({ children }) => {
           >
             <Header />
 
-            <main className="p-4">{children}</main>
+            <main className="">{children}</main>
           </div>
         </div>
       </div>

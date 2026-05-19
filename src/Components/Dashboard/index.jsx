@@ -20,7 +20,7 @@ import {
 
 export default function DashboardPage() {
   return (
-    <div className="p-4 sm:p-6 lg:p-8 min-h-screen space-y-8">
+    <div className="p-2 sm:p-4 lg:p-4 min-h-screen space-y-6">
       {/* Premium Hero Section */}
       <section className="relative overflow-hidden rounded-[32px] border border-slate-200/70 dark:border-slate-700/70 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 shadow-[0_28px_80px_-40px_rgba(15,23,42,0.25)] dark:shadow-black/30 p-6 lg:p-8">
         {/* Background Pattern */}

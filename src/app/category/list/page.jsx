@@ -131,7 +131,7 @@ export default function CategoryListPage() {
   };
 
   return (
-    <div className="space-y-6 p-4 sm:p-6 lg:p-8">
+    <div className="space-y-6 p-2 sm:p-4 lg:p-4">
       <div className="rounded-[2rem] border border-slate-200/40 bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-gradient-to-r dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 dark:shadow-2xl dark:shadow-slate-900/40">
         <div className="flex max-[1210px]:flex-col gap-6">
           <div className="max-w-2xl space-y-3">

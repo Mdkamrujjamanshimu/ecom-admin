@@ -1,6 +1,5 @@
 // @ts-nocheck
 "use client";
-
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,7 +72,7 @@ const Sidebar = () => {
         layoutState.sidebarOpen
           ? layoutState.isDesktop
             ? "w-[260px]"
-            : "w-[170px]"
+            : "w-[250px]"
           : "w-0"
       }`}
     >

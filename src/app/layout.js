@@ -1,6 +1,9 @@
 import { Inter } from 'next/font/google';
 import { LayoutProvider } from "./context/LayoutContext";
 import { ThemeProvider } from "./context/ThemeContext";
+// Suppress TypeScript/Next.js warning for side-effect CSS import when no
+// type declarations are present.
+// @ts-ignore
 import "./globals.css";
 import ThemeWrapper from "@/Components/ThemeWrapper";
 
