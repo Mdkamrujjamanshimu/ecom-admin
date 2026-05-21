@@ -33,13 +33,13 @@ const Header = () => {
     <>
       <header
         ref={headerRef}
-        className={`flex items-center justify-between fixed top-0 z-1000
+        className={`flex items-center justify-between z-1000
         px-6 py-4
         border-b border-slate-200/70 dark:border-slate-700/70
         shadow-[0_8px_32px_-12px_rgba(15,23,42,0.25)] dark:shadow-black/20
         backdrop-blur-xl
-        transition-all duration-500
-        relative overflow-hidden
+        transition-all duration-500 relative
+         overflow-hidden
         ${
           theme === "dark"
             ? // Dark Mode Premium Header Background
@@ -55,7 +55,9 @@ const Header = () => {
             : "left-0 w-full"
         }`}
       >
-      {/* left-[261px]  left-[251px]*/}
+        {/* "w-[calc(100% - 260px)]" */}
+        {/* "w-[calc(100% -250px)]" */}
+        {/* left-[261px]  left-[251px]*/}
         {/* Premium Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Light Mode Effects */}
@@ -96,8 +98,8 @@ const Header = () => {
             {/* Sidebar Toggle */}
             <Button
               className="min-w-11! w-11! h-11! rounded-2xl!
-              text-slate-700! dark:text-slate-300!
-              hover:bg-slate-100/80! dark:hover:bg-slate-800/80!
+              text-slate-700! dark:text-slate-300! bg-slate-100/50!
+              hover:bg-slate-100/80!  dark:bg-slate-800/50! dark:hover:bg-slate-800/80!
               hover:shadow-lg! hover:shadow-slate-200/50! dark:hover:shadow-slate-900/50!
               transition-all duration-300! hover:scale-105!
               backdrop-blur-sm!"
@@ -121,8 +123,8 @@ const Header = () => {
             <Button
               onClick={toggleTheme}
               className="min-w-11! w-11! h-11! rounded-2xl!
-              text-slate-700! dark:text-slate-300!
-              hover:bg-slate-100/80! dark:hover:bg-slate-800/80!
+              text-slate-700! dark:text-slate-300! bg-slate-100/50!
+              hover:bg-slate-100/80! dark:bg-slate-800/50! dark:hover:bg-slate-800/80!
               hover:shadow-lg! hover:shadow-slate-200/50! dark:hover:shadow-slate-900/50!
               transition-all duration-300! hover:scale-105!
               backdrop-blur-sm!"
@@ -137,8 +139,8 @@ const Header = () => {
             {/* Notification */}
             <Button
               className="relative min-w-11! w-11! h-11! rounded-2xl!
-              text-slate-700! dark:text-slate-300!
-              hover:bg-slate-100/80! dark:hover:bg-slate-800/80!
+              text-slate-700! dark:text-slate-300! bg-slate-100/50!
+              hover:bg-slate-100/80! dark:bg-slate-800/50! dark:hover:bg-slate-800/80!
               hover:shadow-lg! hover:shadow-slate-200/50! dark:hover:shadow-slate-900/50!
               transition-all duration-300! hover:scale-105!
               backdrop-blur-sm!

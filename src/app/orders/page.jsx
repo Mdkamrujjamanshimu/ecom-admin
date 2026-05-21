@@ -135,10 +135,10 @@ const page = () => {
       <div className="rounded-[32px] border border-slate-200/80 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 p-8 shadow-2xl shadow-slate-950/10 overflow-hidden">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.32em] text-amber-500/90 dark:text-amber-300/80">Premium orders console</p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl text-slate-950 dark:text-white">Enterprise order operations</h1>
+            <p className="text-xs uppercase tracking-[0.32em] text-amber-500/90 dark:text-amber-300/80">Book order dashboard</p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl text-slate-950 dark:text-white">Book order management</h1>
             <p className="mt-4 max-w-3xl text-sm text-slate-600 dark:text-slate-300 sm:text-base">
-              A refined control layer for order visibility, status monitoring and shipment workflows. Secure, polished and built for executive-level clarity.
+              Track book orders, monitor payment status, and manage shipment workflows for a smooth bookstore operation.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-3 lg:auto-cols-fr lg:grid-flow-col">
@@ -359,11 +359,10 @@ const page = () => {
               <Button
                 key={i}
                 onClick={() => setCurrentPage(i + 1)}
-                className={`px-4 py-2 rounded-2xl text-sm ${
-                  currentPage === i + 1
+                className={`px-4 py-2 rounded-2xl text-sm ${currentPage === i + 1
                     ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white"
                     : "bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
-                }`}
+                  }`}
               >
                 {i + 1}
               </Button>

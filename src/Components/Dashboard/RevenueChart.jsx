@@ -29,7 +29,7 @@ export default function RevenueChart() {
             Monthly Revenue
           </p>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Clear revenue trends presented in a professional premium style.
+            Clear revenue trends presented in a clean, professional layout.
           </p>
         </div>
         <span className="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700 dark:bg-sky-900/25 dark:text-sky-300">

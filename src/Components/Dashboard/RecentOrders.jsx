@@ -37,7 +37,7 @@ export default function RecentOrders() {
             Recent Orders
           </h2>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            A clean, responsive order list designed for premium dashboards.
+            A clean, responsive order list designed for modern bookstore dashboards.
           </p>
         </div>
         <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">

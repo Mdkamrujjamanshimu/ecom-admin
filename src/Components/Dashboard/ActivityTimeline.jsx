@@ -13,7 +13,7 @@ export default function ActivityTimeline() {
           Recent Activity
         </h2>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          A smart activity feed with premium spacing and modern hierarchy.
+          A smart activity feed with clean spacing and modern hierarchy.
         </p>
       </div>
 

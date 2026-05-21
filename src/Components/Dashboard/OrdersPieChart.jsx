@@ -19,7 +19,7 @@ export default function OrdersPieChart() {
           Order Status
         </p>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          Premium order distribution and fulfillment insights.
+          Order distribution and fulfillment insights.
         </p>
       </div>
 

@@ -105,8 +105,8 @@ export default function AddCategoryPage() {
               Add Literary Category
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Create a new book category with premium features, SEO
-              optimization, and advanced settings for your bookstore.
+              Create a new book category with SEO optimization and store-ready
+              settings for your bookstore.
             </p>
           </div>
         </div>
@@ -144,11 +144,10 @@ export default function AddCategoryPage() {
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
                     placeholder="e.g., Mystery & Thriller, Romance, Science Fiction"
-                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 ${
-                      errors.name
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 ${errors.name
                         ? "border-red-300 dark:border-red-600 focus:border-red-500 focus:ring-red-500"
                         : "border-slate-300 dark:border-slate-600 focus:border-indigo-500 focus:ring-indigo-500"
-                    } focus:outline-none focus:ring-2`}
+                      } focus:outline-none focus:ring-2`}
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
@@ -170,11 +169,10 @@ export default function AddCategoryPage() {
                     }
                     placeholder="Describe this book category and its appeal to readers..."
                     rows={4}
-                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 ${
-                      errors.description
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 ${errors.description
                         ? "border-red-300 dark:border-red-600 focus:border-red-500 focus:ring-red-500"
                         : "border-slate-300 dark:border-slate-600 focus:border-indigo-500 focus:ring-indigo-500"
-                    } focus:outline-none focus:ring-2 resize-none`}
+                      } focus:outline-none focus:ring-2 resize-none`}
                   />
                   {errors.description && (
                     <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
@@ -218,11 +216,10 @@ export default function AddCategoryPage() {
                       handleInputChange("seoTitle", e.target.value)
                     }
                     placeholder="Custom title for search engines"
-                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 ${
-                      errors.seoTitle
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 ${errors.seoTitle
                         ? "border-red-300 dark:border-red-600 focus:border-red-500 focus:ring-red-500"
                         : "border-slate-300 dark:border-slate-600 focus:border-indigo-500 focus:ring-indigo-500"
-                    } focus:outline-none focus:ring-2`}
+                      } focus:outline-none focus:ring-2`}
                   />
                   {errors.seoTitle && (
                     <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
@@ -247,11 +244,10 @@ export default function AddCategoryPage() {
                     }
                     placeholder="Meta description for search results"
                     rows={3}
-                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 ${
-                      errors.seoDescription
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 ${errors.seoDescription
                         ? "border-red-300 dark:border-red-600 focus:border-red-500 focus:ring-red-500"
                         : "border-slate-300 dark:border-slate-600 focus:border-indigo-500 focus:ring-indigo-500"
-                    } focus:outline-none focus:ring-2 resize-none`}
+                      } focus:outline-none focus:ring-2 resize-none`}
                   />
                   {errors.seoDescription && (
                     <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
@@ -294,11 +290,10 @@ export default function AddCategoryPage() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`px-16 py-5 text-xl font-semibold rounded-2xl shadow-xl transition-all duration-300 transform ${
-                    isSubmitting
+                  className={`px-16 py-5 text-xl font-semibold rounded-2xl shadow-xl transition-all duration-300 transform ${isSubmitting
                       ? "bg-slate-300 dark:bg-slate-700 text-slate-500 dark:text-slate-400 cursor-not-allowed"
                       : "bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white hover:scale-[1.02] shadow-lg hover:shadow-2xl"
-                  }`}
+                    }`}
                 >
                   {isSubmitting ? (
                     <div className="flex items-center gap-3">

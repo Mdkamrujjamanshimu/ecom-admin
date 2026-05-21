@@ -2,6 +2,43 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+.page-transition {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: pageFadeIn 0.55s ease-out forwards;
+  animation-delay: 0.08s;
+}
+
+@keyframes pageFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 5px !important;
   height: 5px !important;

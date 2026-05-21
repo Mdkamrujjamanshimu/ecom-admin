@@ -29,7 +29,7 @@ export default function SalesChart() {
             Sales Overview
           </p>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Track daily momentum and product demand with premium analytics.
+            Track daily momentum and product demand with bookstore analytics.
           </p>
         </div>
 

@@ -60,7 +60,7 @@ const page = () => {
               <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-950">
                 <p className="text-[11px] uppercase tracking-[0.42em] text-slate-500 dark:text-slate-400">Order</p>
                 <p className="mt-4 text-3xl font-semibold text-slate-950 dark:text-white">#ORD-001</p>
-                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">Premium fulfillment request • expedited support</p>
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">Shipping request details • prioritized delivery support</p>
               </div>
               <div className="rounded-[28px] border border-slate-200 bg-gradient-to-b from-slate-50 to-slate-100 p-6 shadow-sm dark:border-slate-700 dark:from-slate-950 dark:to-slate-900">
                 <p className="text-[11px] uppercase tracking-[0.42em] text-slate-500 dark:text-slate-400">Current status</p>

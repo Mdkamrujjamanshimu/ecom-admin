@@ -132,15 +132,15 @@ const ProductListPage = () => {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl space-y-3">
             <p className="text-sm uppercase tracking-[0.3em] text-indigo-600 dark:text-cyan-300/80">
-              Premium Products Management
+              Book Inventory Management
             </p>
             <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">
-              Product Inventory Dashboard
+              Book Inventory Dashboard
             </h1>
             <p className="max-w-xl text-sm text-slate-600 sm:text-base dark:text-slate-300">
-              Manage your complete product catalog with advanced analytics,
-              real-time inventory tracking, and premium controls designed for
-              optimal e-commerce administration and performance insights.
+              Manage your bookstore inventory with accurate stock tracking,
+              sales summaries, and catalog controls built for day-to-day
+              book store operations.
             </p>
           </div>
 
@@ -183,7 +183,7 @@ const ProductListPage = () => {
                 Product Overview
               </h2>
               <p className="text-sm text-slate-500 dark:text-slate-400">
-                Browse and manage your premium product collection with real-time
+                Browse and manage your bookstore product catalog with real-time
                 analytics and inventory control.
               </p>
             </div>
@@ -249,8 +249,8 @@ const ProductListPage = () => {
               <p className="font-semibold">Product Management System</p>
               <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
                 Advanced inventory management with real-time stock tracking,
-                revenue analytics, and premium category organization for optimal
-                e-commerce operations.
+                revenue analytics, and category organization for optimal
+                store operations.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -269,14 +269,14 @@ const ProductListPage = () => {
         <div className="rounded-[2rem] border border-slate-200/10 bg-slate-50/80 p-6 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-slate-700/40 dark:bg-slate-950/70">
           <div className="space-y-4">
             <p className="text-sm uppercase tracking-[0.25em] text-indigo-600 dark:text-cyan-300/80">
-              Premium Operations
+              Inventory Actions
             </p>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
               Quick Actions
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-300">
-              Essential tools for product management. Add, edit, delete, and
-              organize your product catalog with premium admin controls.
+              Essential tools for book inventory updates. Add, edit, delete, and
+              organize your catalog with clear admin controls.
             </p>
           </div>
           <div className="mt-6 grid gap-4">
@@ -286,7 +286,7 @@ const ProductListPage = () => {
                   ➕ Add New Product
                 </p>
                 <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-                  Create a new premium product entry
+                  Create a new book listing
                 </p>
               </div>
             </Link>
@@ -403,11 +403,10 @@ const ProductListPage = () => {
                     <td className="px-5 py-4">{item.quantity}</td>
                     <td className="px-5 py-4">
                       <span
-                        className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${
-                          item.stock === "In Stock"
+                        className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${item.stock === "In Stock"
                             ? "bg-emerald-100/80 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-200"
                             : "bg-red-100/80 text-rose-700 dark:bg-red-500/15 dark:text-rose-200"
-                        }`}
+                          }`}
                       >
                         {item.stock}
                       </span>
@@ -448,11 +447,10 @@ const ProductListPage = () => {
             <Button
               key={i}
               onClick={() => setCurrentPage(i + 1)}
-              className={`px-4 py-2 rounded-2xl font-semibold transition duration-300 ${
-                currentPage === i + 1
+              className={`px-4 py-2 rounded-2xl font-semibold transition duration-300 ${currentPage === i + 1
                   ? "bg-gradient-to-r from-indigo-600 to-cyan-600 text-white"
                   : "bg-slate-200/80 text-slate-700 hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
-              }`}
+                }`}
             >
               {i + 1}
             </Button>

@@ -139,7 +139,7 @@ export default function CategoryListPage() {
               Book Category Management
             </p>
             <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">
-              Premium Book Categories
+              Book Categories Overview
             </h1>
             <p className="max-w-xl text-sm text-slate-600 sm:text-base dark:text-slate-300">
               Comprehensive admin panel for managing book categories in your
@@ -194,7 +194,7 @@ export default function CategoryListPage() {
                 Book Categories Overview
               </h2>
               <p className="text-sm text-slate-500 dark:text-slate-400">
-                Manage your bookstore's category structure with premium tools
+                Manage your bookstore's category structure with reliable tools
                 for organization, analytics, and customer engagement.
               </p>
             </div>
@@ -218,7 +218,7 @@ export default function CategoryListPage() {
               },
               {
                 label: "Search",
-                value: searchQuery || "Live, fast, premium",
+                value: searchQuery || "Live and active",
                 accent: "bg-emerald-500/10 text-emerald-600",
               },
             ].map((card) => (
@@ -273,15 +273,14 @@ export default function CategoryListPage() {
         <div className="rounded-[2rem] border border-slate-200/10 bg-slate-50/80 p-6 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-slate-700/40 dark:bg-slate-950/70">
           <div className="space-y-4">
             <p className="text-sm uppercase tracking-[0.25em] text-indigo-600 dark:text-cyan-300/80">
-              Premium Operations
+              Category Actions
             </p>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
-              Bookstore Management
+              Bookstore Category Tools
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-300">
-              Advanced tools for literary commerce. Includes category analytics,
-              inventory sync, bulk operations, and performance insights for your
-              online bookstore.
+              Tools for managing book categories, visibility, and inventory
+              performance across your bookstore.
             </p>
           </div>
           <div className="mt-6 grid gap-4">

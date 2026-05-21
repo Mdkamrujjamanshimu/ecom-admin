@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 import { LayoutProvider } from "./context/LayoutContext";
 import { ThemeProvider } from "./context/ThemeContext";
 // Suppress TypeScript/Next.js warning for side-effect CSS import when no
@@ -8,14 +8,15 @@ import "./globals.css";
 import ThemeWrapper from "@/Components/ThemeWrapper";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata = {
-  title: "Next js ecommerce admin panel",
-  description: "Next js ecommerce admin panel template",
+  title: "Book Ecommerce Admin Panel",
+  description:
+    "Admin dashboard for managing book inventory, categories, orders, and sales analytics",
 };
 
 export default function RootLayout({ children }) {

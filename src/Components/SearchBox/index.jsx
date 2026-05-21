@@ -6,7 +6,7 @@ const SearchBox = ({ placeholder, width = "100%", value, onChange }) => {
     <div className="relative" style={{ width }}>
       <IoSearch
         size={18}
-        className="absolute top-4 left-4 text-amber-600 dark:text-amber-300 transition-colors"
+        className="absolute top-5 left-4 text-amber-600 dark:text-amber-300 transition-colors"
       />
       <input
         type="text"

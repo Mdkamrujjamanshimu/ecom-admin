@@ -9,14 +9,14 @@ export default function EditCategoryPage() {
   const [categoryId, setCategoryId] = useState("");
   const [categoryName, setCategoryName] = useState("");
   const [categoryImage, setCategoryImage] = useState(
-    /** @type {File|null} */ (null),
+    /** @type {File|null} */(null),
   );
   const [previewImage, setPreviewImage] = useState("");
   const [categoryTagline, setCategoryTagline] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const fileRef = useRef(/** @type {HTMLInputElement|null} */ (null));
+  const fileRef = useRef(/** @type {HTMLInputElement|null} */(null));
 
   const handleImageChange = (
     /** @type {React.ChangeEvent<HTMLInputElement>} */ e,
@@ -96,8 +96,8 @@ export default function EditCategoryPage() {
               </h1>
               <p className="mt-4 max-w-2xl text-lg text-white/85 leading-8">
                 Upgrade your category editing experience with a refined
-                interface, polished controls, and premium details that help your
-                bookstore look premium.
+                interface, polished controls, and detailed settings that help
+                your bookstore look professional.
               </p>
             </div>
 
@@ -109,13 +109,13 @@ export default function EditCategoryPage() {
                 <p className="mt-3 text-3xl font-semibold text-white">128</p>
               </div>
               <div className="rounded-3xl border border-white/15 bg-white/10 px-4 py-5 shadow-xl backdrop-blur-sm">
-              <div className="flex flex-col">
-                <p className="text-sm uppercase tracking-[0.25em] text-white/70">
-                  Categories
-                </p>
-                <p className="mt-3 text-3xl font-semibold text-white">24</p>
-              </div>
-                
+                <div className="flex flex-col">
+                  <p className="text-sm uppercase tracking-[0.25em] text-white/70">
+                    Categories
+                  </p>
+                  <p className="mt-3 text-3xl font-semibold text-white">24</p>
+                </div>
+
               </div>
               <div className="rounded-3xl border border-white/15 bg-white/10 px-4 py-5 shadow-xl backdrop-blur-sm">
                 <p className="text-sm uppercase tracking-[0.25em] text-white/70">
@@ -184,7 +184,7 @@ export default function EditCategoryPage() {
                     type="text"
                     value={categoryTagline}
                     onChange={(e) => setCategoryTagline(e.target.value)}
-                    placeholder="A premium reading experience for every chapter"
+                    placeholder="A curated reading experience for every chapter"
                     className="mt-2 w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition duration-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white"
                   />
                 </label>
